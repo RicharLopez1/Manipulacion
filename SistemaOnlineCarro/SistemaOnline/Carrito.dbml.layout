@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 9" name="Carrito">
+  <DataContextMoniker Name="/CarritoDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a93a4184-2fb9-4715-9753-5c917ad94905" absoluteBounds="2.875, 0.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/CarritoDataContext/Categoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="cb00d817-524f-4f18-8b42-1db548f433a1" absoluteBounds="2.8899999999999997, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="85da2ed6-101e-470b-a417-e70a675c2588" absoluteBounds="2.375, 6.375, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/CarritoDataContext/Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="958ca749-0a7a-4bf7-878b-5948af779b59" absoluteBounds="2.3899999999999997, 6.8350000000000009, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a84568ae-1ffc-4f9c-85de-d283be78575c" absoluteBounds="2.875, 2.625, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/CarritoDataContext/Estado" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ed232d84-03c1-45f7-bbe2-793cc7c75ab0" absoluteBounds="2.8899999999999997, 3.085, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f72da5f-981f-44fa-b05f-59e66aeb8a4d" absoluteBounds="8.25, 4, 2, 2.155499674479167">
+      <DataClassMoniker Name="/CarritoDataContext/Factura" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ec0c2980-3759-4f56-8e9c-a2d7f14f4cd1" absoluteBounds="8.265, 4.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ba8e66d2-14aa-4e55-9c67-95b437d4f58b" absoluteBounds="5.375, 4.25, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/CarritoDataContext/Promocione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ce5ffa3-3c80-4412-863d-4b13f65805e1" absoluteBounds="5.39, 4.7100000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0706a3e0-54af-45b9-a074-5ac7309704d1" absoluteBounds="6.5, 7, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/CarritoDataContext/Registro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38521b75-bb4f-4768-a189-9f34934aef0c" absoluteBounds="6.5150000000000006, 7.4600000000000009, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.875 : 3.81899251302083); (3.875 : 6.1194482421875); (8.25 : 6.1194482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CarritoDataContext/Estado/Estado_Factura" />
+      <nodes>
+        <classShapeMoniker Id="a84568ae-1ffc-4f9c-85de-d283be78575c" />
+        <classShapeMoniker Id="3f72da5f-981f-44fa-b05f-59e66aeb8a4d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.375 : 6.65625); (9.40625 : 6.65625); (9.40625 : 6.15549967447917)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CarritoDataContext/Usuario/Usuario_Factura" />
+      <nodes>
+        <classShapeMoniker Id="85da2ed6-101e-470b-a417-e70a675c2588" />
+        <classShapeMoniker Id="3f72da5f-981f-44fa-b05f-59e66aeb8a4d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.5 : 7.47679768880208); (4.375 : 7.47679768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CarritoDataContext/Registro/Registro_Usuario" />
+      <nodes>
+        <classShapeMoniker Id="0706a3e0-54af-45b9-a074-5ac7309704d1" />
+        <classShapeMoniker Id="85da2ed6-101e-470b-a417-e70a675c2588" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="19d0cd7c-d935-4d76-ba01-6e7189d70893" absoluteBounds="7, 1.125, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/CarritoDataContext/Producto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="94929dd9-9c6a-44d7-b303-db02fac19835" absoluteBounds="7.015, 1.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.625 : 3.47280110677083); (8.625 : 4)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CarritoDataContext/Producto/Producto_Factura" />
+      <nodes>
+        <classShapeMoniker Id="19d0cd7c-d935-4d76-ba01-6e7189d70893" />
+        <classShapeMoniker Id="3f72da5f-981f-44fa-b05f-59e66aeb8a4d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.875 : 1.59699625651042); (7 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CarritoDataContext/Categoria/Categoria_Producto" />
+      <nodes>
+        <classShapeMoniker Id="a93a4184-2fb9-4715-9753-5c917ad94905" />
+        <classShapeMoniker Id="19d0cd7c-d935-4d76-ba01-6e7189d70893" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.875 : 3.04890055338542); (6.07291416666667 : 3.04890055338542 : JumpStart); (6.23958083333333 : 3.04890055338542 : JumpEnd); (7 : 3.04890055338542)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CarritoDataContext/Estado/Estado_Producto" />
+      <nodes>
+        <classShapeMoniker Id="a84568ae-1ffc-4f9c-85de-d283be78575c" />
+        <classShapeMoniker Id="19d0cd7c-d935-4d76-ba01-6e7189d70893" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6.1562475 : 4.25); (6.1562475 : 2.32294840494792); (7 : 2.32294840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/CarritoDataContext/Promocione/Promocione_Producto" />
+      <nodes>
+        <classShapeMoniker Id="ba8e66d2-14aa-4e55-9c67-95b437d4f58b" />
+        <classShapeMoniker Id="19d0cd7c-d935-4d76-ba01-6e7189d70893" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

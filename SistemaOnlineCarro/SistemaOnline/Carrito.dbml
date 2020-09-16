@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDCARROONLINE" Class="CarritoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=GILMER;Initial Catalog=BDCARROONLINE;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="BDCARROONLINEConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categorias" Member="Categorias">
+    <Type Name="Categoria">
+      <Column Name="Id_categoria" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_categoria" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Categoria_Producto" Member="Productos" ThisKey="Id_categoria" OtherKey="Id_categoria" Type="Producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Usuarios" Member="Usuarios">
+    <Type Name="Usuario">
+      <Column Name="Id_usuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="codigo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="clave" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Id_registro" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Usuario_Factura" Member="Facturas" ThisKey="Id_usuario" OtherKey="Id_usuario" Type="Factura" />
+      <Association Name="Registro_Usuario" Member="Registro" ThisKey="Id_registro" OtherKey="Id_registro" Type="Registro" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Estados" Member="Estados">
+    <Type Name="Estado">
+      <Column Name="Id_estado" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre_estado" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="Estado_Factura" Member="Facturas" ThisKey="Id_estado" OtherKey="Id_estado" Type="Factura" />
+      <Association Name="Estado_Producto" Member="Productos" ThisKey="Id_estado" OtherKey="Id_estado" Type="Producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Facturas" Member="Facturas">
+    <Type Name="Factura">
+      <Column Name="Id_factura" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Id_producto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Total" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Id_estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Id_usuario" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Estado_Factura" Member="Estado" ThisKey="Id_estado" OtherKey="Id_estado" Type="Estado" IsForeignKey="true" />
+      <Association Name="Usuario_Factura" Member="Usuario" ThisKey="Id_usuario" OtherKey="Id_usuario" Type="Usuario" IsForeignKey="true" />
+      <Association Name="Producto_Factura" Member="Producto" ThisKey="Id_producto" OtherKey="Id_producto" Type="Producto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Promociones" Member="Promociones">
+    <Type Name="Promocione">
+      <Column Name="Id_promocion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descuento" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Fecha_inicio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Fecha_fin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(1500)" CanBeNull="true" />
+      <Association Name="Promocione_Producto" Member="Productos" ThisKey="Id_promocion" OtherKey="Id_promo" Type="Producto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Registros" Member="Registros">
+    <Type Name="Registro">
+      <Column Name="Id_registro" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombres" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Apellidos" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Correo" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="sexo" Type="System.Char" DbType="Char(1)" CanBeNull="true" />
+      <Association Name="Registro_Usuario" Member="Usuarios" ThisKey="Id_registro" OtherKey="Id_registro" Type="Usuario" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Productos" Member="Productos">
+    <Type Name="Producto">
+      <Column Name="Id_producto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cantidad" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nombre_producto" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Id_categoria" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Id_promo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Imagen" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Id_estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Producto_Factura" Member="Facturas" ThisKey="Id_producto" OtherKey="Id_producto" Type="Factura" />
+      <Association Name="Categoria_Producto" Member="Categoria" ThisKey="Id_categoria" OtherKey="Id_categoria" Type="Categoria" IsForeignKey="true" />
+      <Association Name="Estado_Producto" Member="Estado" ThisKey="Id_estado" OtherKey="Id_estado" Type="Estado" IsForeignKey="true" />
+      <Association Name="Promocione_Producto" Member="Promocione" ThisKey="Id_promo" OtherKey="Id_promocion" Type="Promocione" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
